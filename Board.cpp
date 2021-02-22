@@ -8,10 +8,6 @@ Board::Board()
   {
     grid[i] = new std::string[size];
   }
-<<<<<<< HEAD
-=======
-//this in bod
->>>>>>> e82889584595557dbead58a4dec179f429a14b80
   for (int i = 0; i < size; i++)
   {
     for (int j = 0; j < size; j++)
