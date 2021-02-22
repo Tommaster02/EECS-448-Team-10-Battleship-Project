@@ -13,6 +13,7 @@
 #include <thread>
 Executive::Executive()
 {
+	//this is teseting EXE
 	p1Carrier.buildShip(6);
 	p2Carrier.buildShip(6);
 	p1BattleShip.buildShip(5);
@@ -599,5 +600,5 @@ void Executive::Game()
 
 Executive::~Executive()
 {
-	
+
 }

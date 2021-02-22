@@ -8,7 +8,7 @@ Board::Board()
   {
     grid[i] = new std::string[size];
   }
-
+//this in bod
   for (int i = 0; i < size; i++)
   {
     for (int j = 0; j < size; j++)
