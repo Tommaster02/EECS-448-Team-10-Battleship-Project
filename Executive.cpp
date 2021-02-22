@@ -30,7 +30,7 @@ Executive::Executive()
 void Executive::run()
 {
 	PrintMenu();
-	Game();
+	//Game();
 }
 
 void Executive::PrintMenu()
@@ -44,6 +44,7 @@ void Executive::PrintMenu()
 		cout << endl << "Enter in number to navigate menu" << endl;
 		cout << "1: Start Game" << endl;
 		cout << "2: How to Play" << endl;
+		cout << "3: Exist" << endl;
 		cin >> selection;
 		switch (selection)
 		{
@@ -67,12 +68,16 @@ void Executive::PrintMenu()
 			cout << "On the board, there is a few symbols that represent ships, hits, misses, and the board itself:" << endl << endl;
 			cout << "'.' = PORTION OF BOARD NOT INTERACTED WITH, 'H'= HIT, 'M' = MISS" << endl;
 			cout << "'S' = SUB, 'P' = PATROL BOAT, 'c' = CRUISER, 'D' = DESTROYER, 'B' = BATTLESHIP, 'C' = CARRIER" << endl << endl;
-
+			case 3:
+			loop = false;
 
 			break;
 		default:
 			cout << selection << " is not a valid choice, try again." << endl;
 		}
+	}
+	if (selection == 1){
+		Game();
 	}
 }
 
@@ -165,7 +170,7 @@ void Executive::Game()
 			i--;
 		}
 		p1Ships.Display();
-		std::this_thread::sleep_for(7s);
+		std::this_thread::sleep_for(std::chrono::seconds(7));
 	}
 	p1Ships.clearScreen();
 	cout << "SWITCH PLAYERS" << endl;
@@ -248,7 +253,7 @@ void Executive::Game()
 			i--;
 		}
 		p2Ships.Display();
-		std::this_thread::sleep_for(7s);
+		std::this_thread::sleep_for(std::chrono::seconds(7));
 	}
 	p2Ships.clearScreen();
 	cout << "Great, both players' boats have now been placed on the board. Now, it is time to attack the enemy!";
@@ -425,7 +430,7 @@ void Executive::Game()
 
 		cout << "PLAYER 2 TURN [" << turn << "]";
 		cout << endl;
-		std::this_thread::sleep_for(7s);
+		std::this_thread::sleep_for(std::chrono::seconds(7));
 
 		cout << "YOUR SHIPS:";
 		cout << endl << endl;
@@ -574,7 +579,7 @@ void Executive::Game()
 		{
 			winner = true;
 		}
-		std::this_thread::sleep_for(7s);
+		std::this_thread::sleep_for(std::chrono::seconds(7));
 		turn++;
 	}
 
@@ -599,5 +604,5 @@ void Executive::Game()
 
 Executive::~Executive()
 {
-	
+
 }
